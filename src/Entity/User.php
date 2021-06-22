@@ -7,12 +7,22 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="`user`")
- * @ApiResource()
+ * @ApiResource(    collectionOperations: [
+ *                      'get' => ['normalization_context' => ['groups' => ['user_read']]],
+ *                      'post'],
+ *                  itemOperations: [
+ *                      'get' => ['normalization_context' => ['groups' => ['user_details_read']]],
+ *                      'put',
+ *                      'patch,
+ *                      'delete'
+ *                  ])
  */
+
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     /**
@@ -24,6 +34,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Groups({"user_read", "user_details_read"})
      */
     private $username;
 
@@ -41,6 +52,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\ManyToOne(targetEntity=Client::class, inversedBy="users")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"user_read", "user_details_read"})
      */
     private $client;
 

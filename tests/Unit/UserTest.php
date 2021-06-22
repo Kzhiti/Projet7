@@ -3,6 +3,7 @@
 
 namespace App\Tests\Unit;
 
+use App\Entity\Client;
 use App\Entity\User;
 use PHPUnit\Framework\TestCase;
 
@@ -13,7 +14,6 @@ class UserTest extends TestCase
     protected function setUp(): void {
         parent::setUp();
         $this->user = new User();
-
     }
 
     public function testGetUsername(): void {
@@ -41,5 +41,16 @@ class UserTest extends TestCase
 
         self::assertInstanceOf(User::class, $response);
         self::assertEquals($value, $this->user->getPassword());
+    }
+
+    public function testClient(): void {
+        $value = new Client();
+
+        $response = $value->addUser($this->user);
+
+        self::assertInstanceOf(Client::class, $response);
+        self::assertInstanceOf(Client::class, $this->user->getClient());
+        self::assertTrue($value->getUsers()->contains($this->user));
+        self::assertEquals($this->user->getClient(), $value);
     }
 }
