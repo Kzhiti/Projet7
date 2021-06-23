@@ -12,15 +12,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="`user`")
- * @ApiResource(    collectionOperations: [
- *                      'get' => ['normalization_context' => ['groups' => ['user_read']]],
- *                      'post'],
- *                  itemOperations: [
- *                      'get' => ['normalization_context' => ['groups' => ['user_details_read']]],
- *                      'put',
- *                      'patch,
- *                      'delete'
- *                  ])
+ * @ApiResource()
  */
 
 class User implements UserInterface, PasswordAuthenticatedUserInterface
@@ -34,7 +26,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
-     * @Groups({"user_read", "user_details_read"})
+     * @Groups({"read"})
      */
     private $username;
 
@@ -52,7 +44,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\ManyToOne(targetEntity=Client::class, inversedBy="users")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups({"user_read", "user_details_read"})
+     * @Groups({"read"})
      */
     private $client;
 
@@ -140,12 +132,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    public function getClient(): ?Client
+    public function getClient(): Client
     {
         return $this->client;
     }
 
-    public function setClient(?Client $client): self
+    public function setClient(Client $client): self
     {
         $this->client = $client;
 
