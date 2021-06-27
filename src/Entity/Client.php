@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use ApiPlatform\Core\Annotation\ApiSubresource;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ClientRepository::class)
@@ -39,7 +40,7 @@ class Client
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $name;
 

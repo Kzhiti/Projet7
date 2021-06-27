@@ -20,17 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b3926e4-6050-4ebc-83d6-13c6c260c8a7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/BileMo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BileMo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +203,10 @@
       <workItem from="1624286789126" duration="18000" />
       <workItem from="1624297134272" duration="2535000" />
       <workItem from="1624349470659" duration="4882000" />
-      <workItem from="1624440014269" duration="9353000" />
+      <workItem from="1624440014269" duration="9948000" />
+      <workItem from="1624550391804" duration="2799000" />
+      <workItem from="1624629196163" duration="594000" />
+      <workItem from="1624789522136" duration="961000" />
     </task>
     <servers />
   </component>
