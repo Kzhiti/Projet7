@@ -13,7 +13,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="`user`")
- * @ApiResource()
+ * @ApiResource(
+ *     attributes={
+ *          "pagination_items_per_page"=5
+ *     }
+ * )
  */
 
 class User implements UserInterface, PasswordAuthenticatedUserInterface
