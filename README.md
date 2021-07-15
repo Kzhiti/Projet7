@@ -19,7 +19,7 @@
 ```
     php bin/console doctrine:migrations:migrate
 ```
-6. Générez les clés SSH ([Solution alternative pour OpenSSL sur Windows](https://slproweb.com/products/Win32OpenSSL.html))
+6. Générez les clés SSH
 Et noter votre passphrase à la ligne "JWT_PASSPHRASE=" de votre fichier `.env.local`
 ```bash
 $ mkdir config/jwt
