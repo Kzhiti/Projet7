@@ -1,4 +1,14 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/f68a16c419c5a317ba6a/maintainability)](https://codeclimate.com/github/Kzhiti/Projet7/maintainability)
+
 # Projet7 - BileMo
+
+## Environnement utilisé durant le développement
+* Symfony 5.3.2
+* Composer 2.0.9
+* WampServer 3.2.3
+    * Apache 2.4.46
+    * PHP 7.4.9
+    * MySQL 5.7.31
 
 ## Installation
 1. Clonez ou téléchargez le repository GitHub dans le dossier voulu :
