@@ -5,10 +5,30 @@ namespace App\Entity;
 use App\Repository\ClientRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Core\Annotation\ApiSubresource;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ClientRepository::class)
+ * @ApiResource(
+ *  itemOperations={
+ *      "get",
+ *      "put"={
+ *          "access_control"="is_granted('ROLE_ADMIN')"
+ *      },
+ *      "delete"={
+ *          "access_control"="is_granted('ROLE_ADMIN')"
+ *      }
+ *  },
+ *  collectionOperations={
+ *      "get",
+ *      "post"={
+ *          "access_control"="is_granted('ROLE_ADMIN')"
+ *      }
+ *  }
+ * )
  */
 class Client
 {
@@ -20,12 +40,13 @@ class Client
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $name;
 
     /**
      * @ORM\OneToMany(targetEntity=User::class, mappedBy="client", orphanRemoval=true)
+     * @ApiSubresource()
      */
     private $users;
 
