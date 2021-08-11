@@ -6,10 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Client;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use FOS\RestBundle\Controller\Annotations as Rest;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-use App\Exception\ResourceValidationException;
 use Symfony\Component\Validator\ConstraintViolationList;
 use ApiPlatform\Core\Annotation\ApiResource;
 
