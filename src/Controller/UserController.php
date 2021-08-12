@@ -43,7 +43,7 @@ class UserController extends AbstractController {
         $em->persist($user);
         $em->flush();
 
-        return new Response('', Response::HTTP_CREATED);
+        return new Response($data, Response::HTTP_CREATED);
     }
 
     /**
@@ -54,7 +54,6 @@ class UserController extends AbstractController {
      */
     public function getUserById(User $user) {
         $data = $this->get('serializer')->serialize($user, 'json');
-
         $response = new Response($data);
         $response->headers->set('Content-Type', 'application/json');
 
@@ -85,8 +84,11 @@ class UserController extends AbstractController {
      *
      * @return Response
      */
-    public function deleteUser(User $user) {
-
+    public function deleteUser(User $user, Request $request) {
+        if ($request->isMethod('post')) {
+            $response = new Response('Not Allowed', Response::HTTP_METHOD_NOT_ALLOWED);
+            $response->headers->set('Content-Type', 'application/json');
+        }
         $em = $this->getDoctrine()->getManager();
         $em->remove($user);
         $em->flush();
