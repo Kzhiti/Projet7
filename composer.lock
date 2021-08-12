@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "685b78f63e4af98f42957fa07538b7a0",
+    "content-hash": "bd6493bc5264a24ea37f5202ccb3cd7b",
     "packages": [
         {
             "name": "api-platform/core",
@@ -2635,6 +2635,108 @@
                 "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.4.0"
             },
             "time": "2020-09-17T18:55:26+00:00"
+        },
+        {
+            "name": "phpro/api-problem",
+            "version": "v1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpro/api-problem.git",
+                "reference": "46fdf98656ad97d97cd6bbeb69277633cde34eaf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpro/api-problem/zipball/46fdf98656ad97d97cd6bbeb69277633cde34eaf",
+                "reference": "46fdf98656ad97d97cd6bbeb69277633cde34eaf",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16.7",
+                "phpro/grumphp-shim": "^1.2",
+                "phpspec/phpspec": "^6.3",
+                "sebastian/comparator": "^1.2.4",
+                "symfony/validator": "^4.4"
+            },
+            "suggest": {
+                "symfony/validator": "If you want to use the ValidationApiProblem"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phpro\\ApiProblem\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Toon Verwerft",
+                    "email": "toon.verwerft@phpro.be"
+                }
+            ],
+            "description": "RFC7807 Problem details implementation",
+            "support": {
+                "issues": "https://github.com/phpro/api-problem/issues",
+                "source": "https://github.com/phpro/api-problem/tree/v1.4.2"
+            },
+            "time": "2021-07-08T18:18:24+00:00"
+        },
+        {
+            "name": "phpro/api-problem-bundle",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpro/api-problem-bundle.git",
+                "reference": "bd53374991012b48d19c8382466cb15a7673d481"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpro/api-problem-bundle/zipball/bd53374991012b48d19c8382466cb15a7673d481",
+                "reference": "bd53374991012b48d19c8382466cb15a7673d481",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 || ^8.0",
+                "phpro/api-problem": "^1.0",
+                "symfony/dependency-injection": "^4.4|^5.0",
+                "symfony/event-dispatcher": "^4.4|^5.0",
+                "symfony/http-kernel": "^4.4|^5.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16.7",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.2",
+                "phpro/grumphp-shim": "^1.2.0",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.4",
+                "symfony/security-core": "^4.4|^5.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Phpro\\ApiProblemBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Toon Verwerft",
+                    "email": "toon.verwerft@phpro.be"
+                }
+            ],
+            "description": "RFC7807 Problem details integration for Symfony",
+            "support": {
+                "issues": "https://github.com/phpro/api-problem-bundle/issues",
+                "source": "https://github.com/phpro/api-problem-bundle/tree/v1.3.0"
+            },
+            "time": "2020-11-27T10:14:47+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
