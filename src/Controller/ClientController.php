@@ -6,6 +6,7 @@ use App\Entity\Client;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use FOS\RestBundle\Controller\Annotations as Rest;
 
@@ -15,7 +16,11 @@ use FOS\RestBundle\Controller\Annotations as Rest;
  */
 class ClientController extends AbstractController {
 
+    private UserPasswordHasherInterface $encoder;
 
+    public function __construct(UserPasswordHasherInterface $encoder) {
+        $this->encoder = $encoder;
+    }
 
     /**
      * Create Client.
@@ -42,6 +47,21 @@ class ClientController extends AbstractController {
      */
     public function getClientById(Client $client) {
         $data = $this->get('serializer')->serialize($client, 'json');
+
+        $response = new Response($data);
+        $response->headers->set('Content-Type', 'application/json');
+
+        return $response;
+    }
+
+    /**
+     * Get User of Client.
+     * @Rest\Get("/clients/{id}/users/{id_user}")
+     *
+     * @return Response
+     */
+    public function getUserOfClientById(Client $client, User $user) {
+        $data = $this->get('serializer')->serialize($user, 'json');
 
         $response = new Response($data);
         $response->headers->set('Content-Type', 'application/json');
@@ -121,4 +141,25 @@ class ClientController extends AbstractController {
         return $response;
     }
 
+    /**
+     * Create Client.
+     * @Rest\Post("/clients/{id}/users")
+     *
+     * @return Response
+     */
+    public function addUserOfClient(Client $client, Request $request) {
+        $data = $request->getContent();
+        $user = $this->get('serializer')->deserialize($data, 'App\Entity\User', 'json');
+
+        $passHash = $this->encoder->hashPassword($user, $user->getPassword());
+        $user->setClient($client);
+        $user->setRoles(['ROLE_ADMIN']);
+        $user->setPassword($passHash);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($user);
+        $em->flush();
+
+        return new Response($data, Response::HTTP_CREATED);
+    }
 }

@@ -26,8 +26,9 @@
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserFormType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,6 +180,10 @@
       <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
       <path value="$PROJECT_DIR$/vendor/phpro/api-problem-bundle" />
       <path value="$PROJECT_DIR$/vendor/phpro/api-problem" />
+      <path value="$PROJECT_DIR$/vendor/pagerfanta/pagerfanta" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
     </include_path>
   </component>
   <component name="ProjectId" id="1uGCm3H7lKTEvClQcQGwkqEG8Lw" />
@@ -223,7 +228,9 @@
       <workItem from="1625133513605" duration="964000" />
       <workItem from="1625162142233" duration="1698000" />
       <workItem from="1626358935260" duration="1748000" />
-      <workItem from="1628764545906" duration="4722000" />
+      <workItem from="1628764545906" duration="5531000" />
+      <workItem from="1628790847194" duration="1874000" />
+      <workItem from="1628834815619" duration="2428000" />
     </task>
     <servers />
   </component>
@@ -251,22 +258,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1624447583029" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1624353197664">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1628792635374">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1624353197664" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1624286805991">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1628792635374" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1628769878387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1624286805991" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1628769878387" />
     <state x="778" y="243" key="NewPhpClassDialog" timestamp="1624353155903">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="778" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1624353155903" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1628768622367">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1628835995240">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1628768622367" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1628835995240" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1624352429772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

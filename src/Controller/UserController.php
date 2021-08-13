@@ -11,6 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Validator\ConstraintViolationList;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * User Controller.
@@ -66,11 +67,18 @@ class UserController extends AbstractController {
      *
      * @return Response
      */
-    public function getUsers()
+    public function getUsers(Request $request, PaginatorInterface $paginator)
     {
         $repository = $this->getDoctrine()->getRepository(User::class);
         $users = $repository->findAll();
-        $data = $this->get('serializer')->serialize($users, 'json');
+
+        $pagination = $paginator->paginate(
+            $users,
+            $request->get('page', 1),
+            5
+        );
+
+        $data = $this->get('serializer')->serialize($pagination, 'json');
 
         $response = new Response($data);
         $response->headers->set('Content-Type', 'application/json');

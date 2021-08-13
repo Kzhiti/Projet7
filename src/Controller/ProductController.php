@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use FOS\RestBundle\Controller\Annotations as Rest;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * Product Controller.
@@ -53,11 +54,18 @@ class ProductController extends AbstractController {
      *
      * @return Response
      */
-    public function getProducts()
+    public function getProducts(Request $request, PaginatorInterface $paginator)
     {
         $repository = $this->getDoctrine()->getRepository(Product::class);
         $products = $repository->findAll();
-        $data = $this->get('serializer')->serialize($products, 'json');
+
+        $pagination = $paginator->paginate(
+            $products,
+            $request->get('page', 1),
+            5
+        );
+
+        $data = $this->get('serializer')->serialize($pagination, 'json');
 
         $response = new Response($data);
         $response->headers->set('Content-Type', 'application/json');
